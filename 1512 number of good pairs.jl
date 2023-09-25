@@ -1,3 +1,5 @@
+# Option 01
+
 function factorial(n)
     """
     factorial(n)
@@ -60,6 +62,24 @@ end
 nums1 = [1, 2, 3, 1, 1, 3]
 nums2 = [1, 1, 1, 1]
 nums3 = [1, 2, 3]
+
+println(numIdenticalPairs(nums1))
+println(numIdenticalPairs(nums2))
+println(numIdenticalPairs(nums3))
+
+
+# Option 02
+function numIdenticalPairs(nums::Vector{Int})::Int
+    ans = 0
+    for i in 1:length(nums)
+        for j in (i+1):length(nums)
+            if nums[i] == nums[j]
+                ans += 1
+            end
+        end
+    end
+    return ans
+end
 
 println(numIdenticalPairs(nums1))
 println(numIdenticalPairs(nums2))
